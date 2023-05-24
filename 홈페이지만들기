@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+    }
+    
+    .gallery img {
+      max-height: 100%;
+      max-width: 100%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery">
+    <img src="image1.jpg" onclick="changeImage()">
+  </div>
+
+  <script>
+    var images = ['image1.jpg', 'image2.jpg', 'image3.jpg'];
+    var currentIndex = 0;
+
+    function changeImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      var img = document.querySelector('.gallery img');
+      img.src = images[currentIndex];
+    }
+  </script>
+</body>
+</html>
